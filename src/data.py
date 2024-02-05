@@ -47,6 +47,12 @@ field: str = None
 wins: WinCombinations = None
 
 
+# regex шаблон для имени игрока
+NAME_PATTERN = compile(r'[A-Za-zА-ЯЁа-яё][A-Za-zА-ЯЁа-яё\d_]+')
 # regex шаблон для размера игрового поля
 DIM_PATTERN = compile(r'[3-9]|1[0-9]|20')
+
+
+# текущий авторизованный игрок
+authorized: str
 

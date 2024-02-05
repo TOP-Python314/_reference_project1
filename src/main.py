@@ -6,11 +6,12 @@
 import data
 import files
 import help
+import players
 import utils
 
 
 def config():
-    """Чтение файлов, инициализация структур данных."""
+    """Чтение файлов, инициализация структур данных, авторизация."""
     data.players_db = files.read_players()
     data.saves_db = files.read_saves()
     
@@ -19,7 +20,7 @@ def config():
     
     utils.change_dimension(3)
     
-    ...
+    data.authorized = players.get_player_name()
 
 
 def main_menu():
