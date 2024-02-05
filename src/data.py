@@ -3,6 +3,8 @@
 """
 
 # стандартная библиотека
+from collections.abc import Sequence
+from numbers import Real
 from pathlib import Path
 from re import compile
 from sys import path, argv
@@ -17,6 +19,8 @@ Turns = dict[SquareIndex, str]
 Pointer = Literal[0, 1]
 WinCombinations = list[set[SquareIndex]]
 GameStats = tuple[int, int]
+Series = Sequence[Real | str]
+Matrix = Sequence[Series]
 
 
 # корень проекта
@@ -70,6 +74,14 @@ empty: Turns = None
 field: str = None
 # индексы выигрышных последовательностей
 wins: WinCombinations = None
+# стратегические матрицы
+start_matrices: tuple[Matrix, Matrix] = None
+
+
+# веса токенов
+WEIGHT_OWN: float = 1.5
+WEIGHT_FOE: float = 1.0
+WEIGHTS: set[float] = {WEIGHT_OWN, WEIGHT_FOE}
 
 
 # названия и способы ввода команд главного меню

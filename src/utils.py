@@ -3,6 +3,7 @@
 """
 
 # текущий проект
+import bot
 import data
 
 
@@ -15,6 +16,10 @@ def change_dimension(new_dimension: int) -> None:
     data.empty = dict.fromkeys(data.all_cells_range, ' ')
     data.field = generate_field_template(new_dimension)
     data.wins = generate_win_combinations(new_dimension)
+    data.start_matrices = (
+        bot.calc_sm_cross(),
+        bot.calc_sm_zero()
+    )
     data.MESSAGES['ход не в диапазоне'].format(data.all_cells-1)
 
 
