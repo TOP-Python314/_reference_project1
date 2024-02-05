@@ -15,6 +15,7 @@ def change_dimension(new_dimension: int) -> None:
     data.empty = dict.fromkeys(data.all_cells_range, ' ')
     data.field = generate_field_template(new_dimension)
     data.wins = generate_win_combinations(new_dimension)
+    data.MESSAGES['ход не в диапазоне'].format(data.all_cells-1)
 
 
 def get_new_dimension() -> int:

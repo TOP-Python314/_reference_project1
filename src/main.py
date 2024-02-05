@@ -24,8 +24,18 @@ def config():
 
 
 def main_menu():
-    """Главное меню."""
+    """Главное меню: обработка команд."""
+    command = input(data.MESSAGES['ввод команды'])
+    
+    if command in data.COMMANDS['...']:
+        ...
+    
+    # elif command in data.COMMANDS['...']:
+    
     ...
+    
+    else:
+        data.MESSAGES['некорректная команда']
 
 
 def end():
