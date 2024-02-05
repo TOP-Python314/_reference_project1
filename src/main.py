@@ -17,6 +17,8 @@ def config():
     if not data.players_db:
         help.print_full_help()
     
+    utils.change_dimension(3)
+    
     ...
 
 
